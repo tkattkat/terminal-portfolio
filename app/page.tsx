@@ -73,7 +73,7 @@ export default function Component() {
         <input
           aria-label="Terminal Input"
           className=" text-white ml-2 outline-none focus:outline-none"
-          style={{backgroundColor: '#000B27'}}
+           style={{backgroundColor: '#000B27'}}
           type="text"
           value={inputCommand}
           onChange={(e) => setInputCommand(e.target.value)}
