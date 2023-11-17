@@ -61,7 +61,7 @@ export default function Component() {
   };
 
   return (
-    <section className="w-full h-screen bg-black text-white p-8">
+    <section className="w-full h-screen text-white p-8" style={{backgroundColor: '#000B27'}}>
       {commandHistory.map((line, index) => (
         <pre key={index} className={`font-mono ${line.color} mt-2`}>
           <code>{`$ ${line.text}`}</code>
@@ -72,7 +72,8 @@ export default function Component() {
         <code>{`$ >_`}</code>
         <input
           aria-label="Terminal Input"
-          className="bg-black text-white ml-2 outline-none focus:outline-none"
+          className=" text-white ml-2 outline-none focus:outline-none"
+          style={{backgroundColor: '#000B27'}}
           type="text"
           value={inputCommand}
           onChange={(e) => setInputCommand(e.target.value)}
