@@ -34,11 +34,11 @@ export default function Component() {
     setInputCommand('');
 
     // Update command history with the entered command
-    setCommandHistory(prevHistory => [...prevHistory, {text: `$ ${command}`, color: 'text-green-300'}]);
+    setCommandHistory(prevHistory => [...prevHistory, {text: ` ${command}`, color: 'text-green-300'}]);
 
     if (command.trim() === '/help') {
       const helpMessage = Object.entries(commands).map(
-        ([cmd, description]) => ({text: `$ ${cmd} - ${description}`, color: 'text-blue-300'})
+        ([cmd, description]) => ({text: `${cmd} - ${description}`, color: 'text-blue-300'})
       );
       setCommandHistory(prevHistory => [...prevHistory, ...helpMessage]);
     } else if (command.trim() === 'about') {
