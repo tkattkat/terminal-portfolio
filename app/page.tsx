@@ -34,7 +34,7 @@ export default function Component() {
     setInputCommand('');
 
     // Update command history with the entered command
-    setCommandHistory(prevHistory => [...prevHistory, {text: ` ${command}`, color: 'text-green-300'}]);
+    setCommandHistory(prevHistory => [...prevHistory, {text: `$ ${command}`, color: 'text-green-300'}]);
 
     if (command.trim() === '/help') {
       const helpMessage = Object.entries(commands).map(
@@ -63,7 +63,7 @@ export default function Component() {
   return (
     <section className="w-full h-screen text-white p-8" style={{ backgroundColor: '#000B27' }}>
       {commandHistory.map((line, index) => (
-        <pre key={index} className={`font-mono ${line.color} mt-2`} style={{ overflowX: 'auto' }}>
+        <pre key={index} className={`font-mono ${line.color} mt-2 text-wrap`} style={{ whiteSpace: 'pre-wrap', wordWrap: 'break-word' }}>
           <code>{`$ ${line.text}`}</code>
         </pre>
       ))}
