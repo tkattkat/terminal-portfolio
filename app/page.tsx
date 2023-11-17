@@ -1,3 +1,4 @@
+
 'use client'
 import { useState } from 'react';
 
@@ -37,17 +38,17 @@ export default function Component() {
 
     if (command.trim() === '/help') {
       const helpMessage = Object.entries(commands).map(
-        ([cmd, description]) => ({text: `$ ${cmd} - ${description}`, color: 'text-green-300'})
+        ([cmd, description]) => ({text: `$ ${cmd} - ${description}`, color: 'text-blue-300'})
       );
       setCommandHistory(prevHistory => [...prevHistory, ...helpMessage]);
     } else if (command.trim() === 'about') {
-      setCommandHistory(prevHistory => [...prevHistory, {text: commandResponses.about, color: 'text-green-300'}]);
+      setCommandHistory(prevHistory => [...prevHistory, {text: commandResponses.about, color: 'text-orange-300'}]);
     } else if (command.trim() === 'portfolio') {
       commandResponses.portfolio.forEach(project => {
-        setCommandHistory(prevHistory => [...prevHistory, {text: `${project.name} - ${project.url}`, color: 'text-green-300'}]);
+        setCommandHistory(prevHistory => [...prevHistory, {text: `${project.name} - ${project.url}`, color: 'text-blue-300'}]);
       });
     } else if (command.trim() === 'github') {
-      setCommandHistory(prevHistory => [...prevHistory, {text: commandResponses.github, color: 'text-green-300'}]);
+      setCommandHistory(prevHistory => [...prevHistory, {text: commandResponses.github, color: 'text-purple-300'}]);
     } else {
       setCommandHistory(prevHistory => [...prevHistory, {text: 'Unknown command. Enter /help for a list of commands.', color: 'text-red-500'}]);
     }
@@ -80,3 +81,4 @@ export default function Component() {
     </section>
   );
 }
+
